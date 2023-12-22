@@ -6,10 +6,7 @@ use bevy_picking_core::backend::prelude::*;
 pub mod prelude {}
 
 #[derive(Resource, Default)]
-pub struct XrRaycastSettings {
-    // pub custom_interact_action: Option<(&'static str, &'static str)>,
-    pub require_markers: bool,
-}
+pub struct XrRaycastSettings {}
 
 #[derive(Clone)]
 pub struct XrRaycastBackend;
@@ -20,12 +17,12 @@ impl Plugin for XrRaycastBackend {
     }
 }
 
-/// Raycasts into the scene using [`RaycastBackendSettings`] and [`PointerLocation`]s, then outputs
+/// Raycasts into the scene using [`PointerLocation`]s, then outputs
 /// [`PointerHits`].
 pub fn update_hits(
     pointers: Query<(Entity, &PointerId, &GlobalTransform), With<XRRayInteractor>>,
     pickables: Query<&Pickable>,
-    backend_settings: Res<XrRaycastSettings>,
+    // backend_settings: Res<XrRaycastSettings>,
     mut raycast: Raycast,
     mut output_events: EventWriter<PointerHits>,
 ) {
