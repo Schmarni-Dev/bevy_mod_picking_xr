@@ -8,12 +8,10 @@ authors = ["Schmarni"]
 
 [dependencies]
 bevy = "0.12.1"
-bevy_mod_picking = { version = "0.17.0", default-features = false, features = [
-	"debug",
-	"selection",
-	"highlight",
-] }
 bevy_mod_raycast = "0.16.0"
 bevy_picking_core = "0.17.0"
 bevy_oxr = { git = "https://github.com/awtterpip/bevy_oxr", default-features = false }
-openxr = { version = "0.17.1" }
+openxr = "0.17.1"
+
+[dev-dependencies]
+bevy_mod_picking = "0.17.0"
